@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: gmimports-postgres
+    environment:
+      POSTGRES_DB: gmimports
+      POSTGRES_USER: gmimports
+      POSTGRES_PASSWORD: gmimports
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
